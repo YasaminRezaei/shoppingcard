@@ -3,4 +3,9 @@ const titleShorter = (title) => {
     return `${spitedTitle[0]} ${spitedTitle[1]}`;
 }
 
-export {titleShorter};
+const IsInCard = (state,id) => {
+    const result = !! state.selectedItems.find(item => item.id === id);
+    return result;
+}
+
+export {titleShorter,IsInCard};
