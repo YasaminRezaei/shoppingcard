@@ -6,28 +6,40 @@ const initialState = {
     total:0,
     checkout:false
 };
+
+const sumItems = (items) => {
+    const itemsCounter = items.reduce((total,product) => total+ product.quantity ,0 );
+    const total = items.reduce( (total,product) => total + product.quantity*product.price , 0).toFixed(2);
+    return {itemsCounter : itemsCounter,total : total}
+} 
+
 const reducer = (state,action) => {
     switch (action.type){
         case "ADD_ITEM":
             if(!state.selectedItems.find(item => item.id === action.payload.id)){
                 state.selectedItems.push({...action.payload,quantity:1});
             }
-            return {...state,selectedItems : [...state.selectedItems] //+quantity
+            return {...state
+                    ,selectedItems : [...state.selectedItems] //+quantity
+                    ,...sumItems(state.selectedItems)
+                    ,checkout:true
             }
            
         case "REMOVE_ITEM":
             const newSelectedItems = state.selectedItems.filter(item => item.id !==action.payload.id)   
-            return{...state , selectedItems : [...newSelectedItems] // selecteditem - payload
+            return{...state ,
+                   selectedItems : [...newSelectedItems] // selecteditem - payload
+                   ,...sumItems(state.selectedItems)
             }
 
         case "INCREASE":
             const indexI = state.selectedItems.findIndex( item => item.id ===action.payload.id )
             state.selectedItems[indexI].quantity ++;
-            return { ...state}
+            return { ...state, ...sumItems(state.selectedItems)}
         case "DECREASE":
             const indexD = state.selectedItems.findIndex( item => item.id ===action.payload.id )
             state.selectedItems[indexD].quantity --;
-            return { ...state}
+            return { ...state, ...sumItems(state.selectedItems)}
 
         case "CHECKOUT" :
             return {
