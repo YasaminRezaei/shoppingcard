@@ -22,14 +22,14 @@ const reducer = (state,action) => {
             return {...state
                     ,selectedItems : [...state.selectedItems] //+quantity
                     ,...sumItems(state.selectedItems)
-                    ,checkout:true
+                    ,checkout:false
             }
            
         case "REMOVE_ITEM":
             const newSelectedItems = state.selectedItems.filter(item => item.id !==action.payload.id)   
             return{...state ,
                    selectedItems : [...newSelectedItems] // selecteditem - payload
-                   ,...sumItems(state.selectedItems)
+                   ,...sumItems(newSelectedItems)
             }
 
         case "INCREASE":

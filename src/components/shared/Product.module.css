@@ -1,0 +1,128 @@
+.container{
+    width: 250px;
+    border:1px solid rgb(227, 226, 226);
+    border-radius: 35px;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0 10px 50px;
+    transition: all 0.2s eas;
+    text-align: center;
+    border-radius: 23px;
+    background: linear-gradient(45deg, #f6f4f4, #ffffff);
+    box-shadow:  5px -5px 6px #9d9d9d,
+                -5px 5px 6px #ffffff;
+}
+.container:hover{
+    border-radius: 35px;
+    background: #ffffff;
+    box-shadow:  -24px 24px 48px #b8b8b8,
+                 24px -24px 48px #ffffff;
+}
+.cardImage{
+    width: 230px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.container h3{
+    color:#616060 ;
+    text-align: center;
+    margin: 25px 20px 15px;
+    font-size: 1.1rem;
+}
+.container p{
+    color: #7a7a7a;
+    text-align: center;
+    margin: 15px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.linkContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 20px 20px;
+}
+
+.itemContainer{
+    width: 60px;
+    height: 25px;
+    border-radius: 23px;
+    background: linear-gradient(45deg, #d6d6d6, #ffffff);
+    box-shadow:  5px -5px 6px #cfcccc,
+                 -5px 5px 6px #ffffff;
+}
+.linkContainer a {
+    text-decoration: none;
+    color: #7a7a7a;
+    font-size: 0.95rem;
+    
+}
+.buttonContainer button{
+    font-size: 0.9rem;
+    border: none;
+    height: 30px;
+    width: 110px;
+    color: #7a7a7a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 5px;
+    border-radius: 23px;
+    background: linear-gradient(45deg, #d6d6d6, #ffffff);
+    box-shadow:  5px -5px 6px #9d9d9d,
+                 -5px 5px 6px #ffffff;
+}
+.buttonContainer button:hover ,.itemContainer:hover{
+    background: linear-gradient(225deg, #cbc8c8, #d7d2d2);
+    box-shadow:  -24px 24px 48px #c4c2c2,
+                 24px -24px 48px #f1ebeb;
+}
+.smallButton{
+    width: 30px !important;
+    font-size: 1.6rem !important;
+    font-weight: bold;
+    line-height: 30px;
+}
+.smallButton img{
+    width: 20px;
+}
+.counter{
+    display: inline-block;
+    width: 20px;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #7a7a7a;
+}
+@media (max-width: 1000px) {
+    .container {
+      width: 45%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 45%;
+    }
+    .cardImage {
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 555px) {
+    .container {
+      width: 70%;
+    }
+    .cardImage {
+      width: 230px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
+

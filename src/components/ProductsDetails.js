@@ -4,6 +4,8 @@ import { Link , useParams} from 'react-router-dom';
 
 //context
 import { ProductsContext } from '../context/ProductContextProvider';
+//styles
+import styles from './ProductsDetails.module.css';
 
 
 const ProductsDetails = (props) => {
@@ -28,14 +30,16 @@ const ProductsDetails = (props) => {
   }, []);
 */
     return (
-        <div>
-            <img src={image} alt="product" />
-            <div>
+        <div className={styles.container}>
+            <img className={styles.image} src={image} alt="product" />
+            <div className={styles.textContainer}>
                 <h3>{title}</h3>
-                <p>{description}</p>
-                <p><span>Category:</span> {category}</p>
-                <div>
-                    <p><span>price:</span> {price} <span>€</span></p>
+                <p className={styles.description}>{description}</p>
+                <p className={styles.category}>
+                    <span>Category:</span> {category}
+                </p>
+                <div className={styles.buttonContainer}>
+                    <span className={styles.price}>price:{price} €</span>
                     <Link to="/products">back to shop</Link>
                 </div>
             </div>
